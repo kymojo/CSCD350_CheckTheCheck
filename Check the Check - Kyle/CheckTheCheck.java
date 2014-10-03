@@ -1,10 +1,6 @@
-/* CSCD 350 // Software Engineering // Assignment 1
- * Team: Twenty Hats
- * Members:
- * - Nathan Graham
- * - Kyle Johnson
- * - Eric Laib
- * - Daniel Moore
+/* Twenty Hats
+ * Nathan Graham, Kyle Johnson, Eric Laib, Daniel Moore
+ * CSCD 350
  * 
  * This program takes input representing various states of a
  * chess board and checks each state if a king is in check.
