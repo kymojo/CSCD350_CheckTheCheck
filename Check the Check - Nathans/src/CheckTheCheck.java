@@ -1,7 +1,5 @@
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
-/* Nathan Graham
+/* Team: Twenty Hats
+ * Nathan Graham
  * CSCD 350
  * Assignment 2 (Check the Check)
  * 
@@ -33,13 +31,12 @@ import java.io.FileNotFoundException;
  *		Game #d: no king is in check.
  * 
  * Where d stands for the game number (starting from 1).
+ * 
  */
-
 
 public class CheckTheCheck {
 	
-	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("input.txt"));
+	public static void main(String[] args) {
 		GameBoard curBoard = new GameBoard();
 		int gameNum = 1;
 		
