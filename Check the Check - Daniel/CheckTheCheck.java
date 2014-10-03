@@ -1,5 +1,5 @@
 /* Team: Twenty-Hats
- * Members names: Nathan Graham, Daniel Moore, Eric Laib, Kyle Johnson
+ * Members names: Daniel Moore
  * CSCD 350
  *
  * Description: Input file will be read and then analyzed
