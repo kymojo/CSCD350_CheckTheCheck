@@ -39,6 +39,7 @@ public class CheckTheCheck{
 	}
 	
 	//====================================================
+	
 	//Read in the board from file
 	public void boardReader(){
 		
@@ -46,18 +47,18 @@ public class CheckTheCheck{
 		while(this.sc.hasNextLine()){
 			
 			int i=0;
-			while(this.sc.hasNextLine()&&i<8){
+			while(this.sc.hasNextLine() && i < 8){
 				String x = sc.nextLine();
 				//System.out.println(x);
 				String[] xi = x.split("(?!^)");
 				
 				//System.out.println(xi.length);
-				for(int u=0;u<8;u++){
+				for(int u = 0;u < 8;u++){
 					//System.out.print(xi[u]);
 				}
 				//System.out.println();
 				
-				for(int j=0;j<8;j++){
+				for(int j = 0;j < 8;j++){
 					this.board[i][j] = xi[j];
 					
 					if(xi[j].equals("k")){
@@ -82,7 +83,7 @@ public class CheckTheCheck{
 			boolean flagOne = checkingWhiteCheck();
 			boolean flagTwo = checkingBlackCheck();
 			
-			if(flagOne&&flagTwo){
+			if(flagOne && flagTwo){
 				noCheck();
 			}
 			
@@ -93,24 +94,25 @@ public class CheckTheCheck{
 	}
 	
 	//====================================================
+	
 	//Call when no one wins the game
 	private void noCheck() {
 		System.out.println("Game #"+this.gameNum+": no king is in check.");
 	}
 	
 	//====================================================
-	//Check to see if the black king is in check
 	
+	//Check to see if the black king is in check
 	private boolean checkingBlackCheck() {
 		int moveV[] = new int [2];
 		boolean flag=true;
 		
 		//north
-		if(this.kBLoc[0]>0&&flag){
+		if(this.kBLoc[0]>0 && flag){
 			moveV[0] = this.kBLoc[0]-1;
 			moveV[1] = this.kBLoc[1];
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=0){
 				moveV[0]=moveV[0]-1;
 			}
 			
@@ -122,11 +124,11 @@ public class CheckTheCheck{
 		}
 		
 		//south
-		if(this.kBLoc[0]<7&&flag){
+		if(this.kBLoc[0]<7 && flag){
 			moveV[0] = this.kBLoc[0]+1;
 			moveV[1] = this.kBLoc[1];
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=7){
 				moveV[0]=moveV[0]+1;
 			}
 			
@@ -138,11 +140,11 @@ public class CheckTheCheck{
 		}
 		
 		//east
-		if(this.kBLoc[1]<7&&flag){
+		if(this.kBLoc[1] < 7 && flag){
 			moveV[0] = this.kBLoc[0];
 			moveV[1] = this.kBLoc[1]+1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[1]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[1]!=7){
 				moveV[1]=moveV[1]+1;
 			}
 			
@@ -154,11 +156,11 @@ public class CheckTheCheck{
 		}
 		
 		//west
-		if(this.kBLoc[1]>0&&flag){
+		if(this.kBLoc[1] > 0 && flag){
 			moveV[0] = this.kBLoc[0];
 			moveV[1] = this.kBLoc[1]-1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[1]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[1]!=0){
 				moveV[1]=moveV[1]-1;
 			}
 			
@@ -170,11 +172,11 @@ public class CheckTheCheck{
 		}
 		
 		//north east
-		if(this.kBLoc[0]>0&&this.kBLoc[1]<7&&flag){
+		if(this.kBLoc[0] > 0 && this.kBLoc[1] < 7 && flag){
 			moveV[0] = this.kBLoc[0]-1;
 			moveV[1] = this.kBLoc[1]+1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=0&&moveV[1]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=0 && moveV[1]!=7){
 				moveV[0]=moveV[0]-1;
 				moveV[1]=moveV[1]+1;
 			}
@@ -187,11 +189,11 @@ public class CheckTheCheck{
 		}
 		
 		//north west
-		if(this.kBLoc[0]>0&&this.kBLoc[1]>0&&flag){
+		if(this.kBLoc[0] > 0 && this.kBLoc[1] > 0 && flag){
 			moveV[0] = this.kBLoc[0]-1;
 			moveV[1] = this.kBLoc[1]-1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=0&&moveV[1]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=0 && moveV[1]!=0){
 				moveV[0]=moveV[0]-1;
 				moveV[1]=moveV[1]-1;
 			}
@@ -204,11 +206,11 @@ public class CheckTheCheck{
 		}
 		
 		//south east
-		if(this.kBLoc[0]<7&&this.kBLoc[1]<7&&flag){
+		if(this.kBLoc[0] < 7 && this.kBLoc[1] < 7 && flag){
 			moveV[0] = this.kBLoc[0]+1;
 			moveV[1] = this.kBLoc[1]+1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=7&&moveV[1]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=7 && moveV[1]!=7){
 				moveV[0]=moveV[0]+1;
 				moveV[1]=moveV[1]+1;
 			}
@@ -221,11 +223,11 @@ public class CheckTheCheck{
 		}
 		
 		//south west
-		if(this.kBLoc[0]<7&&this.kBLoc[1]>0&&flag){
+		if(this.kBLoc[0] < 7 && this.kBLoc[1] > 0 && flag){
 			moveV[0] = this.kBLoc[0]+1;
 			moveV[1] = this.kBLoc[1]-1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=7&&moveV[1]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=7 && moveV[1]!=0){
 				moveV[0]=moveV[0]+1;
 				moveV[1]=moveV[1]-1;
 			}
@@ -276,56 +278,56 @@ public class CheckTheCheck{
 			kMove_eight[0] = this.kBLoc[0]+1;
 			kMove_eight[1] = this.kBLoc[1]-2;
 			
-			if(kMove_one[0]>=0&&kMove_one[0]<=7&&kMove_one[1]>=0&&kMove_one[1]<=7){
+			if(kMove_one[0] >= 0 && kMove_one[0] <= 7 && kMove_one[1] >= 0 && kMove_one[1] <= 7){
 				//check
 				if(this.board[kMove_one[0]][kMove_one[1]].equals("N")){
 					BlackLoses();
 					flag=false;
 				}
 			}
-			if(kMove_two[0]>=0&&kMove_two[0]<=7&&kMove_two[1]>=0&&kMove_two[1]<=7){
+			if(kMove_two[0] >= 0 && kMove_two[0] <= 7 && kMove_two[1] >= 0 && kMove_two[1] <= 7){
 				//check
 				if(this.board[kMove_two[0]][kMove_two[1]].equals("N")){
 					BlackLoses();
 					flag=false;
 				}
 			}
-			if(kMove_three[0]>=0&&kMove_three[0]<=7&&kMove_three[1]>=0&&kMove_three[1]<=7){
+			if(kMove_three[0] >= 0 && kMove_three[0] <= 7 && kMove_three[1] >= 0 && kMove_three[1] <= 7){
 				//check
 				if(this.board[kMove_three[0]][kMove_three[1]].equals("N")){
 					BlackLoses();
 					flag=false;
 				}
 			}
-			if(kMove_four[0]>=0&&kMove_four[0]<=7&&kMove_four[1]>=0&&kMove_four[1]<=7){
+			if(kMove_four[0] >= 0 && kMove_four[0] <= 7 && kMove_four[1] >= 0 && kMove_four[1] <= 7){
 				//check
 				if(this.board[kMove_four[0]][kMove_four[1]].equals("N")){
 					BlackLoses();
 					flag=false;
 				}
 			}
-			if(kMove_five[0]>=0&&kMove_five[0]<=7&&kMove_five[1]>=0&&kMove_five[1]<=7){
+			if(kMove_five[0] >= 0 && kMove_five[0] <= 7 && kMove_five[1] >= 0 && kMove_five[1] <=7 ){
 				//check
 				if(this.board[kMove_five[0]][kMove_five[1]].equals("N")){
 					BlackLoses();
 					flag=false;
 				}
 			}
-			if(kMove_six[0]>=0&&kMove_six[0]<=7&&kMove_six[1]>=0&&kMove_six[1]<=7){
+			if(kMove_six[0] >= 0 && kMove_six[0] <= 7 && kMove_six[1] >= 0 && kMove_six[1] <= 7){
 				//check
 				if(this.board[kMove_six[0]][kMove_six[1]].equals("N")){
 					BlackLoses();
 					flag=false;
 				}
 			}
-			if(kMove_seven[0]>=0&&kMove_seven[0]<=7&&kMove_seven[1]>=0&&kMove_seven[1]<=7){
+			if(kMove_seven[0] >= 0 && kMove_seven[0] <= 7 && kMove_seven[1] >= 0 && kMove_seven[1] <= 7){
 				//check
 				if(this.board[kMove_seven[0]][kMove_seven[1]].equals("N")){
 					BlackLoses();
 					flag=false;
 				}
 			}
-			if(kMove_eight[0]>=0&&kMove_eight[0]<=7&&kMove_eight[1]>=0&&kMove_eight[1]<=7){
+			if(kMove_eight[0] >= 0 && kMove_eight[0] <= 7 && kMove_eight[1] >= 0 && kMove_eight[1] <= 7){
 				//check
 				if(this.board[kMove_eight[0]][kMove_eight[1]].equals("N")){
 					BlackLoses();
@@ -336,7 +338,7 @@ public class CheckTheCheck{
 		}
 		
 		//pawn
-		if(this.kBLoc[0]>0&&this.kBLoc[1]<7&&this.kBLoc[1]>0&&flag){
+		if(this.kBLoc[0]>0 && this.kBLoc[1]<7 && this.kBLoc[1]>0 && flag){
 			int moveVV[] = new int [2];
 			
 			moveV[0] = this.kBLoc[0]+1;
@@ -359,18 +361,18 @@ public class CheckTheCheck{
 	}
 
 	//====================================================
-	//check to see if the white king is in check
 	
+	//check to see if the white king is in check
 	public boolean checkingWhiteCheck() {
 		int moveV[] = new int [2];
 		boolean flag=true;
 		
 		//north
-		if(this.kWLoc[0]>0&&flag){
+		if(this.kWLoc[0]>0 && flag){
 			moveV[0] = this.kWLoc[0]-1;
 			moveV[1] = this.kWLoc[1];
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=0){
 				moveV[0]=moveV[0]-1;
 			}
 			
@@ -382,11 +384,11 @@ public class CheckTheCheck{
 		}
 		
 		//south
-		if(this.kWLoc[0]<7&&flag){
+		if(this.kWLoc[0] < 7 && flag){
 			moveV[0] = this.kWLoc[0]+1;
 			moveV[1] = this.kWLoc[1];
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=7){
 				moveV[0]=moveV[0]+1;
 			}
 			
@@ -398,11 +400,11 @@ public class CheckTheCheck{
 		}
 		
 		//east
-		if(this.kWLoc[1]<7&&flag){
+		if(this.kWLoc[1] < 7 && flag){
 			moveV[0] = this.kWLoc[0];
 			moveV[1] = this.kWLoc[1]+1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[1]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[1] != 7){
 				moveV[1]=moveV[1]+1;
 			}
 			
@@ -414,11 +416,11 @@ public class CheckTheCheck{
 		}
 		
 		//west
-		if(this.kWLoc[1]>0&&flag){
+		if(this.kWLoc[1] > 0 && flag){
 			moveV[0] = this.kWLoc[0];
 			moveV[1] = this.kWLoc[1]-1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[1]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[1] != 0){
 				moveV[1]=moveV[1]-1;
 			}
 			
@@ -430,11 +432,11 @@ public class CheckTheCheck{
 		}
 		
 		//north east
-		if(this.kWLoc[0]>0&&this.kWLoc[1]<7&&flag){
+		if(this.kWLoc[0] > 0 && this.kWLoc[1] < 7 && flag){
 			moveV[0] = this.kWLoc[0]-1;
 			moveV[1] = this.kWLoc[1]+1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=0&&moveV[1]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=0 && moveV[1]!=7){
 				moveV[0]=moveV[0]-1;
 				moveV[1]=moveV[1]+1;
 			}
@@ -447,11 +449,11 @@ public class CheckTheCheck{
 		}
 		
 		//north west
-		if(this.kWLoc[0]>0&&this.kWLoc[1]>0&&flag){
+		if(this.kWLoc[0] > 0 && this.kWLoc[1] > 0 && flag){
 			moveV[0] = this.kWLoc[0]-1;
 			moveV[1] = this.kWLoc[1]-1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=0&&moveV[1]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0] != 0 && moveV[1] != 0){
 				moveV[0]=moveV[0]-1;
 				moveV[1]=moveV[1]-1;
 			}
@@ -464,11 +466,11 @@ public class CheckTheCheck{
 		}
 		
 		//south east
-		if(this.kWLoc[0]<7&&this.kWLoc[1]<7&&flag){
+		if(this.kWLoc[0] < 7 && this.kWLoc[1] < 7 && flag){
 			moveV[0] = this.kWLoc[0]+1;
 			moveV[1] = this.kWLoc[1]+1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=7&&moveV[1]!=7){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=7 && moveV[1] != 7){
 				moveV[0]=moveV[0]+1;
 				moveV[1]=moveV[1]+1;
 			}
@@ -481,11 +483,11 @@ public class CheckTheCheck{
 		}
 		
 		//south west
-		if(this.kWLoc[0]<7&&this.kWLoc[1]>0&&flag){
+		if(this.kWLoc[0] < 7 && this.kWLoc[1] > 0 && flag){
 			moveV[0] = this.kWLoc[0]+1;
 			moveV[1] = this.kWLoc[1]-1;
 			
-			while(this.board[moveV[0]][moveV[1]].equals(".")&&moveV[0]!=7&&moveV[1]!=0){
+			while(this.board[moveV[0]][moveV[1]].equals(".") && moveV[0]!=7 && moveV[1] != 0){
 				moveV[0]=moveV[0]+1;
 				moveV[1]=moveV[1]-1;
 			}
@@ -536,56 +538,56 @@ public class CheckTheCheck{
 			kMove_eight[0] = this.kWLoc[0]+1;
 			kMove_eight[1] = this.kWLoc[1]-2;
 			
-			if(kMove_one[0]>=0&&kMove_one[0]<=7&&kMove_one[1]>=0&&kMove_one[1]<=7){
+			if(kMove_one[0] >= 0 && kMove_one[0] <= 7 && kMove_one[1] >= 0 && kMove_one[1] <= 7){
 				//check
 				if(this.board[kMove_one[0]][kMove_one[1]].equals("n")){
 					WhiteLoses();
 					flag=false;
 				}
 			}
-			if(kMove_two[0]>=0&&kMove_two[0]<=7&&kMove_two[1]>=0&&kMove_two[1]<=7){
+			if(kMove_two[0] >= 0 && kMove_two[0] <= 7 && kMove_two[1] >= 0 && kMove_two[1] <= 7){
 				//check
 				if(this.board[kMove_two[0]][kMove_two[1]].equals("n")){
 					WhiteLoses();
 					flag=false;
 				}
 			}
-			if(kMove_three[0]>=0&&kMove_three[0]<=7&&kMove_three[1]>=0&&kMove_three[1]<=7){
+			if(kMove_three[0] >= 0 && kMove_three[0] <= 7 && kMove_three[1] >= 0 && kMove_three[1] <= 7){
 				//check
 				if(this.board[kMove_three[0]][kMove_three[1]].equals("n")){
 					WhiteLoses();
 					flag=false;
 				}
 			}
-			if(kMove_four[0]>=0&&kMove_four[0]<=7&&kMove_four[1]>=0&&kMove_four[1]<=7){
+			if(kMove_four[0] >= 0 && kMove_four[0] <= 7 && kMove_four[1] >= 0 && kMove_four[1] <= 7){
 				//check
 				if(this.board[kMove_four[0]][kMove_four[1]].equals("n")){
 					WhiteLoses();
 					flag=false;
 				}
 			}
-			if(kMove_five[0]>=0&&kMove_five[0]<=7&&kMove_five[1]>=0&&kMove_five[1]<=7){
+			if(kMove_five[0] >= 0 && kMove_five[0] <= 7 && kMove_five[1] >= 0 && kMove_five[1] <= 7){
 				//check
 				if(this.board[kMove_five[0]][kMove_five[1]].equals("n")){
 					WhiteLoses();
 					flag=false;
 				}
 			}
-			if(kMove_six[0]>=0&&kMove_six[0]<=7&&kMove_six[1]>=0&&kMove_six[1]<=7){
+			if(kMove_six[0] >= 0 && kMove_six[0] <= 7 && kMove_six[1] >= 0 && kMove_six[1] <= 7){
 				//check
 				if(this.board[kMove_six[0]][kMove_six[1]].equals("n")){
 					WhiteLoses();
 					flag=false;
 				}
 			}
-			if(kMove_seven[0]>=0&&kMove_seven[0]<=7&&kMove_seven[1]>=0&&kMove_seven[1]<=7){
+			if(kMove_seven[0] >= 0 && kMove_seven[0] <= 7 && kMove_seven[1] >= 0 && kMove_seven[1] <= 7){
 				//check
 				if(this.board[kMove_seven[0]][kMove_seven[1]].equals("n")){
 					WhiteLoses();
 					flag=false;
 				}
 			}
-			if(kMove_eight[0]>=0&&kMove_eight[0]<=7&&kMove_eight[1]>=0&&kMove_eight[1]<=7){
+			if(kMove_eight[0] >= 0 && kMove_eight[0] <= 7 && kMove_eight[1] >= 0 && kMove_eight[1] <= 7){
 				//check
 				if(this.board[kMove_eight[0]][kMove_eight[1]].equals("n")){
 					WhiteLoses();
@@ -596,7 +598,7 @@ public class CheckTheCheck{
 		}
 		
 		//pawn
-		if(this.kWLoc[0]>0&&this.kWLoc[1]<7&&this.kWLoc[1]>0&&flag){
+		if(this.kWLoc[0] > 0 && this.kWLoc[1] < 7 && this.kWLoc[1] > 0 && flag){
 			int moveVV[] = new int [2];
 			
 			moveV[0] = this.kWLoc[0]-1;
@@ -619,18 +621,21 @@ public class CheckTheCheck{
 	}
 	
 	//====================================================
+	
 	//Call when white loses
 	private void WhiteLoses() {
 		System.out.println("Game #"+this.gameNum+": white king is in check.");
 	}
 	
 	//====================================================
+	
 	//call when black loses
 	private void BlackLoses() {
 		System.out.println("Game #"+this.gameNum+": black king is in check.");
 	}
 	
 	//====================================================
+	
 	//print board
 	public void print_Board(){
 		for(int i=0;i<8;i++){
