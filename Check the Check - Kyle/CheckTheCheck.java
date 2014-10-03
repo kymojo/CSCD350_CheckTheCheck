@@ -10,27 +10,13 @@ import java.io.*;
 
 public class CheckTheCheck {
 
-   // Main takes a filename argument from the command line. Reads from input.txt by default.
    public static void main(String args[])  {
       
-      String fin;
+      ChessBoard board = new ChessBoard();
       
-      try {
-         if (args.length > 0)
-            fin = args[0];
-         else {
-            fin = "input.txt";
-         }
-      
-         ChessBoard board = new ChessBoard(fin);
-      
-         while (board.readBoard() == 1) {
-            if (board.findKings() == 1)
-               board.checkTheCheck();
-         }
-         
-      } catch (FileNotFoundException e) {
-         System.out.println("Invalid filename!");
+      while (board.readBoard() == 1) {
+         if (board.findKings() == 1)
+            board.checkTheCheck();
       }
    }
 }

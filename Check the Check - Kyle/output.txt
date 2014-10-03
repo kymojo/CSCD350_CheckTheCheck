@@ -1,0 +1,49 @@
+Game #1: The black king is in check.
+Game #2: No kings in check.
+Game #3: The white king is in check.
+Game #4: The white king is in check.
+Game #5: The white king is in check.
+Game #6: No kings in check.
+Game #7: The black king is in check.
+Game #8: The black king is in check.
+Game #9: No kings in check.
+Game #10: The white king is in check.
+Game #11: The white king is in check.
+Game #12: The white king is in check.
+Game #13: The white king is in check.
+Game #14: The white king is in check.
+Game #15: The white king is in check.
+Game #16: The white king is in check.
+Game #17: The white king is in check.
+Game #18: The black king is in check.
+Game #19: The black king is in check.
+Game #20: The black king is in check.
+Game #21: The black king is in check.
+Game #22: The black king is in check.
+Game #23: The black king is in check.
+Game #24: The black king is in check.
+Game #25: The black king is in check.
+Game #26: No kings in check.
+Game #27: The white king is in check.
+Game #28: The white king is in check.
+Game #29: The black king is in check.
+Game #30: The black king is in check.
+Game #31: No kings in check.
+Game #32: The white king is in check.
+Game #33: The white king is in check.
+Game #34: The black king is in check.
+Game #35: The black king is in check.
+Game #36: No kings in check.
+Game #37: The black king is in check.
+Game #38: The black king is in check.
+Game #39: The black king is in check.
+Game #40: The black king is in check.
+Game #41: The black king is in check.
+Game #42: The black king is in check.
+Game #43: The black king is in check.
+Game #44: The white king is in check.
+Game #45: The white king is in check.
+Game #46: No kings in check.
+Game #47: No kings in check.
+Game #48: No kings in check.
+Game #49: No kings in check.

@@ -21,9 +21,10 @@ public class ChessBoard {
    private int WHITE = 1;
    
    //============================================ 
-     
-   public ChessBoard(String fin) throws FileNotFoundException {
-      reader = new Scanner(new File(fin));
+   
+   //Ctor initializes the Scanner to System.in.
+   public ChessBoard() {
+      reader = new Scanner(System.in);
    }
    
    //============================================ 
@@ -31,20 +32,24 @@ public class ChessBoard {
    //Read from the input file an 8x8 2D character array.
    public int readBoard() {
       
-      if ( !reader.hasNextLine() )
-         return 0;
+      try {
+         if ( !reader.hasNextLine() )
+            return 0;
       
-      String line;
-      for (int i = 0; i < 8; i++) {
-         line = reader.nextLine();
-         for (int j = 0; j < 8; j++) {
-            board[i][j] = line.charAt(j);
+         String line;
+         for (int i = 0; i < 8; i++) {
+            line = reader.nextLine();
+            for (int j = 0; j < 8; j++) {
+               board[i][j] = line.charAt(j);
+            }
          }
-      }
       
-      if ( reader.hasNextLine() )
-         reader.nextLine();
-      return 1;
+         if ( reader.hasNextLine() )
+            reader.nextLine();
+         return 1;
+      } catch (Exception e) {
+         return 0;
+      }
    }
    
    //============================================
