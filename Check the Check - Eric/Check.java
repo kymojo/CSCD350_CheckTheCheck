@@ -10,7 +10,6 @@
 public class Check {
 
    //Fills a 2D array with the input brought in from the console
-   //======================================================================================================
    public static char[][] fillGameBoards(String board){
 		char[][] gameBoard = new char[8][8];
 		int row, col, i = 0;
@@ -24,11 +23,12 @@ public class Check {
       return gameBoard;
 	}
    
+   //======================================================================================================
+   
    //Gets the coordiantes for the black and white kings
    //
    //These for loops are going to return the 2D array cordinates in 1 based format, I took care of 
-   //that by subtracting the cordinates by 1 before passing them into methods.
-   //======================================================================================================
+   //that by subtracting the cordinates by 1 before passing them into methods.   
    public static String checkForChecks(char[][] board){
    
       int blackKingRow = 0, blackKingCol = 0;
@@ -64,16 +64,13 @@ public class Check {
                return output;
          output = queenCheck(blackKingRow - 1, blackKingCol - 1, whiteKingRow - 1, whiteKingCol - 1, board);
             if(output.compareTo("") != 0)
-               return output;
-         
-      
-      
-      return output;
-      
+               return output;      
+      return output;      
    }
    
-   //Looks to see if either the white or the black kings can be checked by a pawn
    //======================================================================================================
+   
+   //Looks to see if either the white or the black kings can be checked by a pawn
    public static String pawnCheck(int bkRow, int bkCol, int wkRow, int wkCol, char[][] board){
       try{
          if((bkRow+1 <= 7 && bkCol+1 <= 7) && board[bkRow + 1][bkCol + 1] == 'P'){
@@ -93,8 +90,9 @@ public class Check {
       }
    }
    
-   //Looks to see if either the white or the black kings can be checked by a rook
    //======================================================================================================
+   
+   //Looks to see if either the white or the black kings can be checked by a rook   
    public static String rookCheck(int bkRow, int bkCol, int wkRow, int wkCol, char[][] board){
       try{      
          int i;
@@ -139,8 +137,9 @@ public class Check {
       }
    }
    
-   //Looks to see if the bishop can check either king.
    //======================================================================================================
+   
+   //Looks to see if the bishop can check either king.   
    public static String bishopCheck(int bkRow, int bkCol, int wkRow, int wkCol, char[][] board){
       int i, j;
       try{
@@ -185,8 +184,9 @@ public class Check {
       }
    }
    
-   //Looks to see if a knight can check either king
    //======================================================================================================
+   
+   //Looks to see if a knight can check either king
    public static String knightCheck(int bkRow, int bkCol, int wkRow, int wkCol, char[][] board){
       try{      
          
@@ -229,13 +229,13 @@ public class Check {
       }catch(Exception e){
          System.out.println("Error in Knight Check");
          return "";
-      }
-      
+      }      
       return "";
    }
    
-   //Looks to see if a queen can check either king
    //======================================================================================================
+   
+   //Looks to see if a queen can check either king
    public static String queenCheck(int bkRow, int bkCol, int wkRow, int wkCol, char[][] board){
       
       int i, j, k;
@@ -313,12 +313,12 @@ public class Check {
       }catch(Exception e){
          System.out.println("Error in Queen Check");
          return "";
-      }
-      
+      }      
    }
    
-   //Prints the game board(s) entered (not currently used in the program)
    //======================================================================================================
+   
+   //Prints the game board(s) entered (not currently used in the program)
    public static void printGameBoards(char[][] gameBoard){
       int row, col;
       
